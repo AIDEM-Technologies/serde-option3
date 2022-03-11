@@ -1,0 +1,45 @@
+[package]
+authors = ["Jonas Bushart"]
+name = "serde_with_macros"
+version = "1.4.1"
+
+categories = ["encoding"]
+description = "proc-macro library for serde_with"
+documentation = "https://docs.rs/serde_with_macros/"
+edition = "2018"
+keywords = ["serde", "utilities", "serialization", "deserialization"]
+license = "MIT OR Apache-2.0"
+readme = "README.md"
+repository = "https://github.com/jonasbb/serde_with/tree/master/serde_with_macros"
+
+include = ["src/**/*", "LICENSE-*", "README.md", "CHANGELOG.md"]
+
+[lib]
+proc-macro = true
+
+[badges]
+maintenance = {status = "actively-developed"}
+
+[dependencies]
+darling = "0.12.0"
+proc-macro2 = "1.0.1"
+quote = "1.0.0"
+
+[dependencies.syn]
+features = [
+    # "extra-traits", # Only for debugging
+    "full",
+    "parsing",
+]
+version = "1.0.3"
+
+[dev-dependencies]
+pretty_assertions = "0.7.1"
+rustversion = "1.0.0"
+serde = {version = "1.0.75", features = ["derive"]}
+serde_json = "1.0.25"
+trybuild = "1.0.14"
+version-sync = "0.9.1"
+
+[package.metadata.docs.rs]
+all-features = true
